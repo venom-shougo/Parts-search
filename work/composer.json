@@ -1,0 +1,12 @@
+{
+    "name": "root/work",
+    "autoload": {
+        "psr-4": {
+            "Root\\Work\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "phpoffice/phpspreadsheet": "^1.24"
+    }
+}
