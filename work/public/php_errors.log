@@ -1,0 +1,14 @@
+[23-Oct-2022 22:38:40 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /work/public/parts_display.php on line 273
+[24-Oct-2022 22:55:19 Asia/Tokyo] PHP Parse error:  syntax error, unexpected variable "$get_parts", expecting ")" in /work/public/edit.php on line 54
+[24-Oct-2022 22:55:27 Asia/Tokyo] PHP Parse error:  syntax error, unexpected variable "$get_parts", expecting ")" in /work/public/edit.php on line 54
+[25-Oct-2022 00:01:45 Asia/Tokyo] PHP Parse error:  syntax error, unexpected single-quoted string "text-success" in /work/public/edit.php on line 62
+[25-Oct-2022 00:01:53 Asia/Tokyo] PHP Parse error:  syntax error, unexpected single-quoted string "text-success" in /work/public/edit.php on line 62
+[23-Nov-2022 12:25:44 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file in /work/public/admin.php on line 148
+[23-Nov-2022 12:25:45 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file in /work/public/admin.php on line 148
+[23-Nov-2022 13:11:32 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "?" in /work/public/admin.php on line 126
+[23-Nov-2022 21:33:14 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "}" in /work/public/admin.php on line 62
+[30-Nov-2022 20:37:00 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ";" in /work/public/admin.php on line 147
+[30-Nov-2022 20:37:00 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ";" in /work/public/admin.php on line 147
+[30-Nov-2022 20:57:03 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /work/public/admin.php on line 160
+[30-Nov-2022 20:57:06 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /work/public/admin.php on line 160
+[30-Nov-2022 22:19:17 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /work/public/mypage.php on line 164

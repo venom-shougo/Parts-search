@@ -1,0 +1,60 @@
+img
+{
+  width: 350px;
+  height: 350px;
+}
+
+.form-signin {
+  max-width: 600px;
+  padding: 15px;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.input-btn
+{
+  border: none;
+  background-color: white;
+}
+
+.but
+{
+  font-size: 20px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.parts-list
+{
+  max-width: 600px;
+}
+
+.title-center
+{
+  text-align: center;
+}
+
+i
+{
+  font-size: 30px;
+  color: green;
+}
+
+.table-width
+{
+  max-width: 800px
+}
+
+.td-color
+{
+  color:rgb(86, 85, 85);
+}
+
+.icon
+{
+  color:aliceblue;
+  font-size: 16px;
+}
