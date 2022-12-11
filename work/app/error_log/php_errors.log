@@ -483,3 +483,27 @@
 [05-Dec-2022 22:15:06 Asia/Tokyo] PHP Warning:  Undefined variable $value7 in /work/public/parts_display.php on line 133
 [05-Dec-2022 22:15:06 Asia/Tokyo] PHP Stack trace:
 [05-Dec-2022 22:15:06 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value2 in /work/public/parts_display.php on line 128
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value3 in /work/public/parts_display.php on line 129
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value4 in /work/public/parts_display.php on line 130
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value5 in /work/public/parts_display.php on line 131
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value6 in /work/public/parts_display.php on line 132
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Warning:  Undefined variable $value7 in /work/public/parts_display.php on line 133
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:29 Asia/Tokyo] PHP   1. {main}() /work/public/parts_display.php:0
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP Warning:  Undefined array key 6 in /work/public/mypage.php on line 153
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP Warning:  foreach() argument must be of type array|object, null given in /work/public/mypage.php on line 155
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP Stack trace:
+[12-Dec-2022 00:04:45 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
