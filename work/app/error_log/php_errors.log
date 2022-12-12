@@ -1,0 +1,36 @@
+[13-Dec-2022 01:09:17 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:17 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:17 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 114
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:19 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:21 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:21 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:21 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:22 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:23 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:23 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:23 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 114
+[13-Dec-2022 01:09:23 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:23 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:30 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:30 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:30 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 114
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:34 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:45 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:45 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:45 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 42
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP Warning:  Undefined variable $admin in /work/public/mypage.php on line 114
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP Stack trace:
+[13-Dec-2022 01:09:47 Asia/Tokyo] PHP   1. {main}() /work/public/mypage.php:0
