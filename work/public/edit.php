@@ -41,7 +41,6 @@ if (empty($_SESSION['edit_err'])) {
 //登録パーツバリデーション
 $err = [];
 $err = PartsValidateForm::editParts($edit_parts);
-
 // エラーカウント
 if (count($err) > 0) {
   $_SESSION['edit_err'] = $err;
@@ -50,10 +49,10 @@ if (count($err) > 0) {
 }
 
 //差分をCSSで表示
-var_dump($edit_parts);
-var_dump($get_parts);
+// var_dump($edit_parts);
+// var_dump($get_parts);
 $result = array_diff( $get_parts, $edit_parts);
-var_dump($result);
+// var_dump($result);
 
 //三項演算子でスタイルを適用
 isset($result['partname']) ? $text_color1 = 'text-success h5' : false;
@@ -84,9 +83,9 @@ include('_header.php');
         </tr>
         <tr>
           <td>部品名</td>
-          <td class="<?= Utils::h($text_color1); ?>"><?= Utils::h($edit_parts['parts_name']); ?></td>
+          <td class="<?= Utils::h($text_color1); ?>"><?= Utils::h($edit_parts['part_name']); ?></td>
           <td><?= Utils::h($get_parts['partname']); ?></td>
-          <input type="hidden" name="parts_name" value="<?= Utils::h($edit_parts['parts_name']); ?>">
+          <input type="hidden" name="parts_name" value="<?= Utils::h($edit_parts['part_name']); ?>">
         </tr>
         <tr>
           <td>メーカー</td>

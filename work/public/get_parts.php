@@ -91,9 +91,9 @@ include('_header.php');
         <table class="table">
           <thead>
             <tr>
-              <th class="col"></th>
+
               <th class="col">No</th>
-              <th class="col-10">品名</th>
+              <th class="col-11">品名</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -101,7 +101,7 @@ include('_header.php');
       <?php $i = 1; foreach ((array)$parts_id as $key => $disp) : ?>
         <form action="" method="post">
           <ul class="list-unstyled parts-list">
-            <li class="lead ms-5"><?= $i .'. ' ?>
+            <li class="lead ms-3"><?= $i .'. '; ?>
             <button class="but btn-link ms-4"><?= Utils::h($disp); ?></button>
             <input type="hidden" name="id" value="<?= Utils::h($key); ?>"></li>
           </ul>

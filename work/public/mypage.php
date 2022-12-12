@@ -62,6 +62,11 @@ if (isset($_POST['search'])) {
 } elseif (isset($_POST['db'])) {
   $column = $_POST;
   $get_column = Db::getColumn($column);
+  // var_dump($get_column);
+} else {
+  $edit_column = $_POST;
+  // var_dump($edit_column);
+  // exit;
 }
 
 include('_header.php');
@@ -136,33 +141,38 @@ include('_header.php');
     <?php else : ?>
       <p class="h4 mb-2 text-center">テーブル詳細</p>
       <section class="mb-5">
-        <table class="table table-bordered border shadow">
-          <thead class="table-light">
-            <tr class="table-primary">
-              <th class="col-2">Field</th>
-              <th class="col-2">Type</th>
-              <th class="col-1">Null</th>
-              <th class="col-1">Key</th>
-              <th class="col-3">Default</th>
-              <th class="col-3">Extra</th>
-            </tr>
-          </thead>
-          <?php if (isset($get_column)) : ?>
-            <?php $count = (COUNT($get_column));
-            for ($i = 0; $i <= $count; $i++) : ?>
-              <?php $id = $get_column[$i]; ?>
-              <tr>
-                <?php foreach ($id as $d) : ?>
-                  <td><?= Utils::h($d); ?><p class="d-flex flex-row-reverse me-4 mb-2"><a class="btn dropdown-toggle" data-bs-toggle="collapse" href="#collapseContent<?= Utils::h(0 . $i); ?>" role="button" aria-expanded="false" aria-controls="collapseContent<?= Utils::h(0 . $i); ?>"></a></p>
-                    <div class="collapse mb-3" id="collapseContent<?= Utils::h(0 . $i); ?>">
-                      <input class="form-control mb-1" type="text" name="" id="" value="<?= Utils::h($d); ?>">
-                    </div>
-                  </td>
-                <?php endforeach; ?>
+        <form action="" method="post">
+
+          <table class="table table-bordered border shadow">
+            <thead class="table-light">
+              <tr class="table-primary">
+                <th class="col-2">Field</th>
+                <th class="col-2">Type</th>
+                <th class="col-1">Null</th>
+                <th class="col-1">Key</th>
+                <th class="col-3">Default</th>
+                <th class="col-3">Extra</th>
               </tr>
-            <?php endfor; ?>
-          <?php endif; ?>
-        </table>
+            </thead>
+
+            <?php if (isset($get_column)) : ?>
+              <?php $count = (COUNT($get_column));
+              for ($i = 0; $i <= $count; $i++) : ?>
+                <?php $id = $get_column[$i]; ?>
+                <tr>
+                  <?php foreach ($id as $key => $d) : ?>
+                    <td><?= Utils::h($d); ?><p class="d-flex flex-row-reverse me-4 mb-2"><a class="btn dropdown-toggle" data-bs-toggle="collapse" href="#collapseContent<?= Utils::h(0 . $i); ?>" role="button" aria-expanded="false" aria-controls="collapseContent<?= Utils::h(0 . $i); ?>"></a></p>
+                      <div class="collapse mb-3" id="collapseContent<?= Utils::h(0 . $i); ?>">
+                        <input class="form-control mb-1" type="text" name="column<?= Utils::h($i) . '_' . Utils::h($key); ?>" id="" value="<?= Utils::h($d); ?>">
+                      </div>
+                    </td>
+                  <?php endforeach; ?>
+                </tr>
+              <?php endfor; ?>
+            <?php endif; ?>
+          </table>
+          <button class="btn btn-primary" type="submit">編集</button>
+        </form>
       </section>
       <div class="d-flex flex-row-reverse">
         <a href="mypage.php"><button class="btn btn-primary rounded-pill">戻る</button></a>

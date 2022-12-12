@@ -176,10 +176,10 @@ class PartsValidateForm
       exit();
     }
 
-    if (empty(trim($register['parts_name']))) {
+    if (empty(trim($register['part_name']))) {
       $err['parts_err'] = '部品名を記入してください';
     } else {
-      $var = Utils::checkInput($register['parts_name']);
+      $var = Utils::checkInput($register['part_name']);
       $str = mb_strlen(trim($var));
       if ($str > 64){
         $err['parts_err'] = '64文字以内で入力してください';
