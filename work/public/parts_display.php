@@ -50,8 +50,9 @@ switch ($get_parts['category']) {
 $show = false;
 if (isset($_SESSION['edit_err'])) {
   $edit_err = $_SESSION['edit_err'];
+  // var_dump($edit_err);
   $show = 'show';
-  // unset($_SESSION['edit_err']);
+  unset($_SESSION['edit_err']);
 }
 
 //管理者パスワードエラー
@@ -76,8 +77,8 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">部品名</td>
         <td class="align-middle"><?= Utils::h($get_parts['partname']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
-            <input class="form-control mb-1" type="text" name="partname" id="floatingInput" placeholder="部品名" value="<?= Utils::h($get_parts['partname']); ?>">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
+            <input class="form-control mb-1" type="text" name="part_name" id="floatingInput" placeholder="部品名" value="<?= Utils::h($get_parts['partname']); ?>">
             <label for="floatingInput">部品名</label>
             <?php if (isset($edit_err['parts_err'])) : ?>
               <div role="alert">
@@ -91,8 +92,8 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">メーカー</td>
         <td class="align-middle"><?= Utils::h($get_parts['manufacturer']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
-            <input class="form-control mb-1" type="text" name="manufacturer" id="floatingInput" placeholder="メーカー" value="<?= Utils::h($get_parts['manufacturer']); ?>">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
+            <input class="form-control mb-1" type="text" name="manufact_name" id="floatingInput" placeholder="メーカー" value="<?= Utils::h($get_parts['manufacturer']); ?>">
             <label for="floatingInput">メーカー</label>
             <?php if (isset($edit_err['manufact_err'])) : ?>
               <div role="alert">
@@ -106,8 +107,8 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">型番</td>
         <td class="align-middle"><?= Utils::h($get_parts['model']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
-            <input class="form-control mb-1" type="text" name="model" id="floatingInput" placeholder="型番" value="<?= Utils::h($get_parts['model']); ?>">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
+            <input class="form-control mb-1" type="text" name="model_name" id="floatingInput" placeholder="型番" value="<?= Utils::h($get_parts['model']); ?>">
             <label for="floatingInput">型番</label>
             <?php if (isset($edit_err['model_err'])) : ?>
               <div role="alert">
@@ -121,7 +122,7 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">カテゴリー</td>
         <td class="align-middle"><?= Utils::h($get_parts['category']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating mb-3" id="collapseContent01">
             <select class="form-select mb-1" name="category" id="floatingCelect" placeholder="カテゴリー">
               <option value="0">選択してください</option>
               <option value="バルブ" <?= Utils::h($value1); ?>>バルブ</option>
@@ -145,7 +146,7 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">サイズ</td>
         <td class="align-middle"><?= Utils::h($get_parts['size']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
             <input class="form-control mb-1" type="text" name="size" id="floatingInput" placeholder="サイズ" value="<?= Utils::h($get_parts['size']); ?>">
             <label for="floatingInput">サイズ</label>
             <?php if (isset($edit_err['size_err'])) : ?>
@@ -160,7 +161,7 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">価格</td>
         <td class="align-middle">￥<?= Utils::h(number_format($get_parts['price'])); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
             <input class="form-control mb-1" type="text" name="price" id="floatingInput" placeholder="値段" value="<?= Utils::h($get_parts['price']); ?>">
             <label for="floatingInput">値段</label>
             <?php if (isset($edit_err['price_err'])) : ?>
@@ -175,7 +176,7 @@ include('_header.php');
         <td class="td-color fs-5 fw-bold col-2">発注先</td>
         <td class="align-middle"><?= Utils::h($get_parts['supplier']); ?></td>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
             <input class="form-control mb-1" type="text" name="supplier" id="floatingInput" placeholder="発注先" value="<?= Utils::h($get_parts['supplier']); ?>">
             <label for="floatingInput">発注先</label>
             <?php if (isset($edit_err['supplier_err'])) : ?>
@@ -195,7 +196,7 @@ include('_header.php');
           <td class="align-middle">－－</td>
         <?php endif; ?>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
             <input class="form-control mb-1" type="text" name="code" id="floatingInput" placeholder="モノタロウは注文コード入力" value="<?= Utils::h($get_parts['code']); ?>">
             <label for="floatingInput">モノタロウは注文コード入力</label>
             <?php if (isset($edit_err['code_err'])) : ?>
@@ -215,7 +216,7 @@ include('_header.php');
           <td class="align-middle">－－</td>
         <?php endif; ?>
         <td>
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> form-floating-2 mb-3" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> form-floating-2 mb-3" id="collapseContent01">
             <input class="form-control mb-1" type="tel" name="phone" id="floatingInput" placeholder="発注先電話番号" value="<?= Utils::h($get_parts['phone']); ?>">
             <label for="floatingInput">発注先電話番号</label>
             <?php if (isset($edit_err['phone_err'])) : ?>
@@ -229,7 +230,7 @@ include('_header.php');
           <input type="hidden" name="img" value="<?= Utils::h($get_parts['img_path']); ?>">
           <input type="hidden" name="csrf_token" value="<?= Utils::h($_SESSION["csrf_token"]); ?>">
 
-          <div class="collapse <?php if (!empty($show)) { echo Utils::h($show); } ?> container text-center" id="collapseContent01">
+          <div class="collapse <?php if (!empty($show)) {echo Utils::h($show);} ?> container text-center" id="collapseContent01">
             <div class="d-flex flex-row-reverse">
               <button class="btn btn-success rounded-pill" type="submit">登録</button>
             </div>
