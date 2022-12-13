@@ -4,6 +4,12 @@ img
   height: 350px;
 }
 
+.img-size
+{
+  width: 280px;
+    height: 280px;
+}
+
 .form-signin {
   max-width: 600px;
   padding: 15px;
