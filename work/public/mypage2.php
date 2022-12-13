@@ -54,19 +54,23 @@ if (isset($_SESSION['validation_err'])) {
 
 //パーツ検索Formをセッションに保存
 //
-//POST処理分岐
-if (isset($_POST['search'])) {
-    $_SESSION['send_parts'] = $_POST;
-    header('Location: get_parts.php?page=1');
-    exit();
-} elseif (isset($_POST['db'])) {
-    $column = $_POST;
-    $get_column = Db::getColumn($column);
-    // var_dump($get_column);
+//PGET処理分岐
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // get値分岐
+    $branch = $_GET['data'];
+    switch ($branch) {
+        case 'gear':
+            header('Location: plant.php');
+            break;
+        case 'search':
+            header('Location: search.php');
+            break;
+        case 'buy':
+            header('Location: get_history.php');
+            break;
+    }
 } else {
-    $edit_column = $_POST;
-    // var_dump($edit_column);
-    // exit;
+    
 }
 
 include('_header.php');
@@ -75,15 +79,13 @@ include('_header.php');
 
 <div class="container">
 
-    <form action="search.php" method="post">
-        <main class="m-auto">
-            <div class="text-center">
-                <a href="http://localhost:8562/search.php?data%5B%5D=gear"><img class="img-size img-fluid m-4" src="./img/plant.png" alt="設備から検索"></a>
-                <a href="http://localhost:8562/search.php?data%5B%5D=search"><img class="img-size img-fluid m-4" src="./img/glass.png" alt="部品名から検索"></a>
-                <a href="http://localhost:8562/search.php?data%5B%5D=gear"><img class="img-size img-fluid m-4" src="./img/buy1.png" alt="購入履歴から検索"></a>
-            </div>
-        </main>
-    </form>
+    <main class="m-auto">
+        <div class="text-center">
+            <a href="http://localhost:8562/mypage2.php?data=gear"><img class="img-size img-fluid m-4" src="./img/plant.png" alt="設備から検索"></a>
+            <a href="http://localhost:8562/mypage2.php?data=search"><img class="img-size img-fluid m-4" src="./img/glass.png" alt="部品名から検索"></a>
+            <a href="http://localhost:8562/mypage2.php?data=buy"><img class="img-size img-fluid m-4" src="./img/buy1.png" alt="購入履歴から検索"></a>
+        </div>
+    </main>
 
     <?php if ($admin === true) : ?>
 

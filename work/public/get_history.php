@@ -158,7 +158,7 @@ include('_header.php');
             <?php $disp = substr_replace($disp, '', 12,11); ?>
               <form action="" method="post">
                 <ul class="list-unstyled parts-list">
-                  <li class="lead ms-4"><?= $i .'. ' ?>
+                  <li class="lead ms-4"><?= $i .'.'; ?>
                   <button class="but btn-link ms-4"><?= Utils::h($disp); ?></button>
                   <input type="hidden" name="id" value="<?= Utils::h($key); ?>"></li>
                 </ul>
