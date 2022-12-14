@@ -7,7 +7,26 @@ img
 .img-size
 {
   width: 280px;
-    height: 280px;
+  height: 280px;
+}
+
+.search-icon
+{
+  width: 80px;
+  height: 80px;
+}
+
+.bg1
+{
+  background-color:rgb(146, 166, 185);
+}
+.bg2
+{
+  background-color:rgb(236, 193, 161);
+}
+.bg3
+{
+  background-color:rgb(172, 230, 155);
 }
 
 .form-signin {

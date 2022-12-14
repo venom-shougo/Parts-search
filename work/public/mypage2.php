@@ -70,7 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             break;
     }
 } else {
-    
 }
 
 include('_header.php');
@@ -80,16 +79,22 @@ include('_header.php');
 <div class="container">
 
     <main class="m-auto">
-        <div class="text-center">
-            <a href="http://localhost:8562/mypage2.php?data=gear"><img class="img-size img-fluid m-4" src="./img/plant.png" alt="設備から検索"></a>
-            <a href="http://localhost:8562/mypage2.php?data=search"><img class="img-size img-fluid m-4" src="./img/glass.png" alt="部品名から検索"></a>
-            <a href="http://localhost:8562/mypage2.php?data=buy"><img class="img-size img-fluid m-4" src="./img/buy1.png" alt="購入履歴から検索"></a>
+        <div class="d-flex justify-content-center">
+            <a href="http://localhost:8562/mypage2.php?data=gear"><img class="img-size img-fluid mt-4 mb-0" src="./img/mypage/plant.png" alt="設備から検索"><br>
+                <p class="text-center">設備から検索</p>
+            </a>
+            <a href="http://localhost:8562/mypage2.php?data=search"><img class="img-size img-fluid mt-4 mb-0" src="./img/mypage/glass.png" alt="部品名から検索"><br>
+                <p class="text-center">部品一覧から検索</p>
+            </a>
+            <a href="http://localhost:8562/mypage2.php?data=buy"><img class="img-size img-fluid mt-4 mb-0" src="./img/mypage/buy1.png" alt="購入履歴から検索"><br>
+                <p class="text-center">購入履歴から検索</p>
+            </a>
         </div>
     </main>
 
     <?php if ($admin === true) : ?>
 
-        <p class="h3 text-center mb-5">データベース操作</p>
+        <p class="h3 text-center m-5">データベース操作</p>
 
         <?php if (empty($column)) : ?>
 
