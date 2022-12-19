@@ -63,7 +63,9 @@ include('_header.php');
         <option value="0">選択してください</option>
         <option value="バルブ">バルブ</option>
         <option value="配管">配管</option>
+        <option value="カムロック">カムロック</option>
         <option value="計器">計器</option>
+        <option value="ポンプ">ポンプ</option>
         <option value="エアツール">エアツール</option>
         <option value="キャスター">キャスター</option>
         <option value="掃除用具">掃除用具</option>

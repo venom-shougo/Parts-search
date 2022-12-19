@@ -42,34 +42,35 @@ class PartsLogic
   public static function totalParts()
   {
     $result = false;
-    $kind = [];
+    // $kind = [];
     $arr = [];
     //パーツ検索セッションの値を評価
-    if (isset($_SESSION['send_parts'])) {
-      $search = $_SESSION['send_parts'];
+    if (isset($_SESSION['category'])) {
+      $search = $_SESSION['category'];
     }
     //カテゴリー選択の値を代入
-    $kind = $search['search'];
+    // $kind = $search['search'];
     //検索方法分岐
-    switch($kind) {
-      case '1':
-        $sql = "SELECT COUNT(*) AS count FROM parts WHERE manufacturer LIKE ?";
-        break;
-      case '2':
-        $sql = "SELECT COUNT(*) AS count FROM parts WHERE partname LIKE ?";
-        break;
-      case '3':
-        $sql = "SELECT COUNT(*) AS count FROM parts WHERE category LIKE ?";
-        break;
-      case '4':
-        $sql = "SELECT COUNT(*) AS count FROM parts WHERE size LIKE ?";
-        break;
-    }
+    // switch($kind) {
+    //   case '1':
+    //     $sql = "SELECT COUNT(*) AS count FROM parts WHERE manufacturer LIKE ?";
+    //     break;
+    //   case '2':
+    //     $sql = "SELECT COUNT(*) AS count FROM parts WHERE partname LIKE ?";
+    //     break;
+    //   case '3':
+    //     $sql = "SELECT COUNT(*) AS count FROM parts WHERE category LIKE ?";
+    //     break;
+    //   case '4':
+    //     $sql = "SELECT COUNT(*) AS count FROM parts WHERE size LIKE ?";
+    //     break;
+    // }
+    $sql = "SELECT COUNT(*) AS count FROM parts WHERE category LIKE ?";
 
-    $search = $search['search_name'];
+    // $search = $search['search'];
+    $search = $search;
     $search = '%'.$search.'%';
     $arr[] = $search;
-
     try {
       $stmt = Database::connect()->prepare($sql);
       $stmt->execute($arr);
@@ -89,30 +90,33 @@ class PartsLogic
   public static function searchParts($now, $per_page)
   {
     $result = false;
-    $kind = [];
+    // $kind = [];
     $arr = [];
     //パーツ検索セッションの値を評価
-    if (isset($_SESSION['send_parts'])) {
-      $search = $_SESSION['send_parts'];
+    if (isset($_SESSION['category'])) {
+      $search = $_SESSION['category'];
     }
-    $kind = $search['search'];
+    // $kind = $search['search'];
     //検索方法分岐
-    switch($kind) {
-      case '1':
-        $sql = "SELECT id, partname FROM parts WHERE manufacturer LIKE ? ORDER BY id LIMIT ?, ?";
-        break;
-      case '2':
-        $sql = "SELECT id, partname FROM parts WHERE partname LIKE ? ORDER BY id LIMIT ?, ?";
-        break;
-      case '3':
-        $sql = "SELECT id, partname FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
-        break;
-      case '4':
-        $sql = "SELECT id, partname FROM parts WHERE size LIKE ? ORDER BY id LIMIT ?, ?";
-        break;
-    }
+    // switch($kind) {
+    //   case '1':
+    //     $sql = "SELECT id, partname FROM parts WHERE manufacturer LIKE ? ORDER BY id LIMIT ?, ?";
+    //     break;
+    //   case '2':
+    //     $sql = "SELECT id, partname FROM parts WHERE partname LIKE ? ORDER BY id LIMIT ?, ?";
+    //     break;
+    //   case '3':
+    //     $sql = "SELECT id, partname FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
+    //     break;
+    //   case '4':
+    //     $sql = "SELECT id, partname FROM parts WHERE size LIKE ? ORDER BY id LIMIT ?, ?";
+    //     break;
+    // }
 
-    $search = $search['search_name'];
+    $sql = "SELECT id, partname FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
+
+    // $search = $search['search_name'];
+    $search = $search;
     $search = '%'.$search.'%';
     $arr[] = $search;
 
