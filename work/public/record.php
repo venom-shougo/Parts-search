@@ -53,7 +53,7 @@ include('_header.php');
       </form>
     <?php else : ?>
     <h1 class="h3 mb-3 mt-5 fw-normal text-center"><?= Utils::h($success); ?></h1>
-      <form action="mypage.php" method="get">
+      <form action="mypage2.php" method="get">
         <div class="container text-center">
           <div class="d-flex flex-row-reverse">
             <button class="btn btn-primary rounded-pill">マイページ</button>

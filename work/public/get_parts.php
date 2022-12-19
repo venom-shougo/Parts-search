@@ -7,7 +7,7 @@ if (!empty($_SERVER['SCRIPT_NAME'])) {
   $url = $_SERVER['SCRIPT_NAME'];
 }
 
-$referer = $_SERVER['HTTP_REFERER'];
+// $referer = $_SERVER['HTTP_REFERER'];
 
 
 //パーツ検索入力の検査
@@ -15,8 +15,8 @@ $err = [];
 $err = PartsValidateForm::searchParts();
 if (count($err) > 0) {
   $_SESSION['validation_err'] = $err;
-  header('Location:' . $referer);
-  return;
+  header('Location: search.php');
+  exit();
 } else {
   //検索件数取得
   $parts_count = PartsLogic::totalParts();
@@ -117,10 +117,10 @@ include('_header.php');
         </ul>
       </nav>
 
-      <form action="mypage.php" method="get">
+      <form action="search.php" method="get">
         <div class="container text-center">
           <div class="d-flex flex-row-reverse">
-            <button class="btn btn-primary rounded-pill">マイページ</button>
+            <button class="btn btn-primary rounded-pill">戻る</button>
           </div>
         </div>
       </form>

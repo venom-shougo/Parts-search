@@ -137,27 +137,26 @@ class PartsValidateForm
   {
     $err = [];
     //パーツ検索セッションの値を評価
-    if (isset($_SESSION['send_parts'])) {
-      $parts = $_SESSION['send_parts'];
+    if (isset($_SESSION['category'])) {
+      $parts = $_SESSION['category'];
     } else {
-      header('Location: mypage.php');
+      header('Location: mypage2.php');
       exit();
     }
 
-    if (empty(trim($parts['search']))) {
-      $err['category_err'] = '検索方法を選択してください';
-    } else {
-      Utils::checkInput($parts['search']);
+    // if (empty(trim($parts['search']))) {
+    //   $err['category_err'] = '検索方法を選択してください';
+    // } else {
+    //   Utils::checkInput($parts['search']);
+    // }
+
+    if (!empty(trim($parts))) {
+      $var = Utils::checkInput($parts);
+      $str = mb_strlen(trim($var));
+      if ($str > 10){
+        $err['search_category_err'] = '不正な入力';
     }
 
-    if (empty(trim($parts['search_name']))) {
-      $err['search_name_err'] = '検索名を入力してください';
-    } else {
-      $var = Utils::checkInput($parts['search_name']);
-      $str = mb_strlen(trim($var));
-      if ($str > 30){
-        $err['search_name_err'] = '30文字以内で入力してください';
-      }
     }
     return $err;
   }
