@@ -113,7 +113,7 @@ class PartsLogic
     //     break;
     // }
 
-    $sql = "SELECT id, partname FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
+    $sql = "SELECT id, partname,image_id FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
 
     // $search = $search['search_name'];
     $search = $search;
@@ -219,12 +219,12 @@ class PartsLogic
       // var_dump($result);
       // exit;
       if (!empty($result)) {
-       $getimg = ImageAcqu::getImage($result);
+        $getimg = ImageAcqu::getImage($result);
       //  var_dump($getimg);
-       $result = array_merge($result, $getimg);
+        $result = array_merge($result, $getimg);
       //  var_dump($result);
       //  exit;
-       return $result;
+        return $result;
       }
     } catch (PDOException $e) {
       echo 'PARTS_E04接続失敗' . $e->getMessage();

@@ -4,7 +4,7 @@
  */
 class ImageAcqu
 {
-  
+
   /**
    * 画像表示
    * @paramreturn $result
@@ -50,20 +50,20 @@ class ImageAcqu
   /**
    * DB部品登録前画像取得処理
    * @param array $search
-   * @param array return 
+   * @param array return
    */
   public static function searchImage($search)
   {
     $result = false;
     $arr = [];
     $sql = "SELECT id FROM images WHERE name LIKE :name";
-    
+
     $search = $search[0];
     $search = '%'.$search.'%';
     $arr[] = $search;
 
     try {
-      $stmt = Database::connect()->prepare($sql); 
+      $stmt = Database::connect()->prepare($sql);
       $stmt->execute($arr);
       $result = $stmt->fetch();
       if (empty($result)) {
@@ -72,10 +72,10 @@ class ImageAcqu
       return $result;
     } catch(PDOException $e) {
       echo 'IMG_E01接続失敗' . $e->getMessage();
-      return $result; 
+      return $result;
     }
   }
-  
+
   /**
    * 画像登録処理
    * @param array $confirm
@@ -85,7 +85,7 @@ class ImageAcqu
   {
     $result = false;
     $arr = [];
-    
+
     //画像ファイル代入
     if (isset($_FILES['image']['tmp_name'])) {
       $file = $_FILES['image'];
@@ -103,18 +103,18 @@ class ImageAcqu
     }
 
     $sql = "INSERT INTO images (img_name, img_path, name) VALUES (?, ?, ?)";
-    
+
     $arr[] = $name;
     $arr[] = $save_path;
     $arr[] = $registparts['image_name'];
 
     try {
-      $stmt = Database::connect()->prepare($sql); 
+      $stmt = Database::connect()->prepare($sql);
       $result = $stmt->execute($arr);
       return $result;
     } catch(PDOException $e) {
       echo 'IMG_E02接続失敗' . $e->getMessage();
-      return $result; 
+      return $result;
     }
   }
 
@@ -126,19 +126,29 @@ class ImageAcqu
     $result = false;
     $arr = [];
 
-    $sql = "SELECT  img_path FROM images WHERE id = :id";
-    $arr[] = $getimg['image_id'];
-    // var_dump($arr);
-    try {
-      $stmt = Database::connect()->prepare($sql); 
-      $stmt->execute($arr);
-      $result = $stmt->fetch();
-      // var_dump($result);
-      // exit;
-      return $result;
-    } catch(PDOException $e) {
-      echo 'IMG_E03接続失敗' . $e->getMessage();
-      return $result; 
+    if (isset($getimg['image_id'])) {
+      $arr[] = $getimg['image_id'];
+      $sql = "SELECT img_path FROM images WHERE id = :id";
+      try {
+        $stmt = Database::connect()->prepare($sql);
+        $stmt->execute($arr);
+        $result = $stmt->fetch();
+        return $result;
+      } catch(PDOException $e) {
+        echo 'IMG_E03接続失敗' . $e->getMessage();
+        return $result;
+      }
+    } else {
+      $sql = "SELECT id, img_path FROM images";
+      try {
+        $stmt = Database::connect()->prepare($sql);
+        $stmt->execute($arr);
+        $result = $stmt->fetchAll();
+        return $result;
+      } catch (PDOException $e) {
+        echo 'IMG_E03接続失敗' . $e->getMessage();
+        return $result;
+      }
     }
   }
 }
