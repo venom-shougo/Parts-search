@@ -16,6 +16,12 @@ img
   height: 80px;
 }
 
+.get-icon
+{
+  width: 150px;
+    height: 150px;
+}
+
 .bg1
 {
   background-color:rgb(146, 166, 185);

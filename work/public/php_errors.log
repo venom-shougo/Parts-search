@@ -12,3 +12,7 @@
 [30-Nov-2022 20:57:03 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /work/public/admin.php on line 160
 [30-Nov-2022 20:57:06 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token "endif", expecting end of file in /work/public/admin.php on line 160
 [30-Nov-2022 22:19:17 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /work/public/mypage.php on line 164
+[21-Dec-2022 22:31:03 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ")" in /work/public/get_parts.php on line 104
+[21-Dec-2022 22:31:04 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ")" in /work/public/get_parts.php on line 104
+[21-Dec-2022 22:31:07 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ")" in /work/public/get_parts.php on line 104
+[21-Dec-2022 22:31:12 Asia/Tokyo] PHP Parse error:  syntax error, unexpected token ")" in /work/public/get_parts.php on line 104
