@@ -35,25 +35,21 @@ if (!isset($_GET['page'])) {
   $now = $_GET['page'];
 }
 
-//検索パーツ取得
-$search = PartsLogic::searchParts($now, $per_page);
-$img = ImageAcqu::getImage(null); //画像id、パス全件取得
-$id_path = array_column((array)$img, 'img_path', 'id'); //idをキーにimg_pathを値にする
-$parts_img = array_column((array)$search, 'id', 'image_id'); //image_idをキーにする
-$image_path = array_intersect_key($id_path, $parts_img); //同じキーと値を取得
+//検索パーツ取得、parts.id partname img_path
+$searchs = PartsLogic::searchParts($now, $per_page);
+for ($key = 0; $key < count((array)$searchs); $key++) {
+  $search = $searchs;
+}
 
 //getpartsの配列から単一のカラムを返す
 if (!empty($search)) {
   $num_data = count((array)$search); //データ数
-  $parts_id = array_column((array)$search, 'partname', 'id'); //idをキーにしたパーツ名
 } else {
   //検索結果が０件
   $search_srr = $_SESSION['search_err'];
   $num_data = 0;
 }
-var_dump($parts_id);
-var_dump($num_data);
-var_dump($image_path);
+
 //全データ件数表示
 $current = $now * $num_data;
 $total_num = '全' . $count[0] . '件中 ' . $current . '件';
@@ -75,19 +71,13 @@ include('_header.php');
     <table class="table">
       <thead>
         <tr>
-          <th class="col-2">No</th>
-          <th class="col-10">品名</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
           <td>
-            <div class="h4 text-danger"><?= Utils::h($search_srr); ?></div>
+            <div class="h4 text-danger mt-5"><?= Utils::h($search_srr); ?></div>
           </td>
         </tr>
-      </tbody>
+      </thead>
     </table>
-    <form action="mypage.php" method="get">
+    <form action="search.php" method="get">
       <div class="container text-center">
         <div class="d-flex flex-row-reverse">
           <button class="btn btn-primary rounded-pill">戻る</button>
@@ -96,34 +86,15 @@ include('_header.php');
     </form>
   <?php else : ?>
     <h1 class="h2 mb-1 mt-4 title-center">検索結果</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <!-- <th class="col">No</th>
-              <th class="col-11">品名</th> -->
-        </tr>
-      </thead>
-    </table>
-    <tbody></tbody>
-    <div class="d-flex flex-wrap">
-      <ul class="list-group">
-        <?php foreach ((array)$image_path as $path) : ?>
-          <li class="list-group-item">
-            <img class=" get-icon" src="<?= Utils::h($path); ?>" alt="">
-          </li>
-        <?php endforeach; ?>
-      </ul>
-      <ul>
-        <?php $i = 1; foreach ((array)$parts_id as $key => $disp) : ?>
-          <form action="" method="post">
-            <?= $i . '. '; ?>
-            <li class="list-group-item">
-              <button class="but btn-link ms-4"><?= Utils::h($disp); ?></button>
-              <input type="hidden" name="id" value="<?= Utils::h($key); ?>">
-            </li>
-          </form>
-        <?php $i++; endforeach; ?>
-      </ul>
+    <div class="d-flex flex-wrap justify-content-center mt-4">
+      <?php foreach ((array)$searchs as $disp) : ?>
+        <form class="border rounded m-1" action="" method="post">
+          <button class="but btn-link"><img class=" get-icon" src="<?= Utils::h($disp['img_path']); ?>" alt=""><br>
+            <p class="h6"><?= Utils::h($disp['partname']); ?></p>
+          </button>
+          <input type="hidden" name="id" value="<?= Utils::h($disp['id']); ?>">
+        </form>
+      <?php endforeach; ?>
     </div>
 
 
