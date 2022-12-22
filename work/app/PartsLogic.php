@@ -113,7 +113,11 @@ class PartsLogic
     //     break;
     // }
 
-    $sql = "SELECT id, partname,image_id FROM parts WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
+    $sql = "SELECT
+              parts.id, partname, images.img_path
+            FROM
+              parts INNER JOIN images ON parts.image_id = images.id
+            WHERE category LIKE ? ORDER BY id LIMIT ?, ?";
 
     // $search = $search['search_name'];
     $search = $search;
