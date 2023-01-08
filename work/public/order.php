@@ -147,7 +147,7 @@ include('_header.php');
   </div>
   <div class="container text-center">
     <div class="d-flex flex-row-reverse">
-      <form action="mypage.php" method="get">
+      <form action="mypage2.php" method="get">
         <button class="btn btn-primary rounded-pill">マイページ</button>
       </form>
     </div>

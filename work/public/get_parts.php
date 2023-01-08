@@ -86,7 +86,7 @@ include('_header.php');
     </form>
   <?php else : ?>
     <h1 class="h2 mb-1 mt-4 title-center">検索結果</h1>
-    <div class="d-flex flex-wrap justify-content-center mt-4">
+    <div class="d-flex flex-wrap flex-fill mt-4">
       <?php foreach ((array)$searchs as $disp) : ?>
         <form class="border rounded m-1" action="" method="post">
           <button class="but btn-link"><img class=" get-icon" src="<?= Utils::h($disp['img_path']); ?>" alt=""><br>
