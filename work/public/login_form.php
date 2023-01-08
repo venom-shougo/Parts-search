@@ -5,7 +5,7 @@ require_once(__DIR__ . '/../app/config.php');
 // ログイン以降に他formに移らない処理
 $result = UserLogic::checkLogin();
 if ($result) {
-  header('Location: mypage.php');
+  header('Location: mypage2.php');
   return;
 }
 
@@ -65,7 +65,7 @@ if (isset($_SESSION['message'])) {
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          
+
         </ul>
         <p class="text-center text-muted">&copy; SHOWA INK 1932-2022</p>
       </footer>
@@ -74,4 +74,3 @@ if (isset($_SESSION['message'])) {
   <script src="js/bootstrap.js"></script>
 </body>
 </html>
-

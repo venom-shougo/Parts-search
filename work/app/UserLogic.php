@@ -140,15 +140,10 @@ class UserLogic
     $pass = $admin_pass['0'];
     $arr[] = self::ADMIN;
 
-    // var_dump($arr);
-    // var_dump($pass);
-    // exit;
     try {
       $stmt = Database::connect()->prepare($sql);
       $stmt->execute($arr);
       $hash = $stmt->fetch();
-      // var_dump($hash);
-      // exit;
       // パスワード照会
     if (password_verify($pass, $hash['password'])) {
       $user = true;
@@ -191,7 +186,7 @@ class UserLogic
   /**
    * 退会処理
    * @param string $deleteuser
-   * @return array|bool $user|false
+   * @return bool true|false
    */
   public static function deleteuser()
   {

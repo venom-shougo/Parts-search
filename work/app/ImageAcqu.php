@@ -7,7 +7,7 @@ class ImageAcqu
 
   /**
    * 画像表示
-   * @paramreturn $result
+   * @return bool|array $result
    */
   public static function imageDisp()
   {
@@ -79,7 +79,7 @@ class ImageAcqu
   /**
    * 画像登録処理
    * @param array $confirm
-   * @return $result bool
+   * @return bool $result
    */
   public static function createImage($registparts)
   {
