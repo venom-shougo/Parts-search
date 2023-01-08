@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once(__DIR__ . '/../app/config.php');
 
 $validate = [];
@@ -25,6 +25,6 @@ if (empty($result)) {
   unset($_SESSION['signup_err']);
   unset($_SESSION['login_err']);
   unset($_SESSION['message']);
-  header('Location: mypage.php');
+  header('Location: mypage2.php');
   exit();
 }

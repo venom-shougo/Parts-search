@@ -84,8 +84,8 @@ class PartsLogic
   }
   /**
    * パーツ検索取得
-   * @param string $search
-   * @return bool $result
+   * @param string $now, $per_page
+   * @return array|bool $result
    */
   public static function searchParts($now, $per_page)
   {
@@ -146,12 +146,12 @@ class PartsLogic
       return $result;
     }
   }
+
   /**
    * パーツ登録処理
    * @param array $registparts
-   * @return array $result
+   * @return bool $result
    */
-
   public static function createParts($registparts)
   {
     $result = false;
@@ -199,8 +199,8 @@ class PartsLogic
   }
   /**
    * パーツ検索詳細
-   * @param array $geted
-   * @return array $result
+   * @param array
+   * @return bool|array $result
    */
   public static function getParts()
   {
@@ -220,14 +220,9 @@ class PartsLogic
       $stmt = Database::connect()->prepare($sql);
       $stmt->execute($arr);
       $result = $stmt->fetch();
-      // var_dump($result);
-      // exit;
       if (!empty($result)) {
         $getimg = ImageAcqu::getImage($result);
-      //  var_dump($getimg);
         $result = array_merge($result, $getimg);
-      //  var_dump($result);
-      //  exit;
         return $result;
       }
     } catch (PDOException $e) {
