@@ -1,6 +1,10 @@
 <?php
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * 購入履歴一覧表示処理
+ */
+
 if (isset($_SESSION['login_user']) && $_SESSION['login_user']['id'] >0) {
   $login_user = $_SESSION['login_user'];
 }
@@ -15,7 +19,7 @@ $history_count = OrderLogic::totalHistory($login_user);
 
 //ページネーションクラス
 $count = array_column($history_count, 'count'); //トータルデータ数
-$per_page = 5; //１ページあたりのデータ件数
+$per_page = TOTAL_RECORDS_PER_PAGE; //１ページあたりのデータ件数
 $max_page = ceil($count[0] / $per_page); //最大ページ数
 
 //GETで渡されたページを確認
@@ -72,7 +76,7 @@ if (isset($_SESSION['validation_err'])) {
 
 
 include('_header.php');
-// require_once(__DIR__ . '/./_header.php');
+
 ?>
   <div class="container">
     <?php if(!empty($history_err)) : ?>

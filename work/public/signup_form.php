@@ -1,5 +1,9 @@
-<?php 
+<?php
 require_once(__DIR__ . '/../app/config.php');
+
+/**
+ * 新規登録Form処理
+ */
 
 Token::setToken();
 
@@ -76,7 +80,7 @@ if (isset($_SESSION['match_err'])) {
           </div>
         <?php endif; ?>
       </div>
-      
+
       <div class="form-floating">
         <input type="text" name="number" class="form-control" id="floatingInput" placeholder="社員番号">
         <label for="floatingInput">社員番号</label>
@@ -108,7 +112,7 @@ if (isset($_SESSION['match_err'])) {
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          
+
         </ul>
         <p class="text-center text-muted">&copy; SHOWA INK 1932-2022</p>
       </footer>

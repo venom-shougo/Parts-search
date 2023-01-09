@@ -7,6 +7,7 @@ class ImageAcqu
 
   /**
    * 画像表示
+   * @param array $_FILES['image']['tmp_name']
    * @return bool|array $result
    */
   public static function imageDisp()
@@ -32,25 +33,9 @@ class ImageAcqu
   }
 
   /**
-   * 画像セッション保存
-   */
-  // public static function sessionINimage()
-  // {
-  //   $result = false;
-
-  //   //画像ファイル代入
-  //   if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-  //     $_SESSION['registimage'] = $_FILES['image'];
-  //     $result = true;
-  //     return $result;
-  //   }
-  //   return $result;
-  // }
-
-  /**
    * DB部品登録前画像取得処理
    * @param array $search
-   * @param array return
+   * @return bool|array $result
    */
   public static function searchImage($search)
   {
@@ -78,7 +63,8 @@ class ImageAcqu
 
   /**
    * 画像登録処理
-   * @param array $confirm
+   * @param array $registparts
+   * @see move_uploaded_file
    * @return bool $result
    */
   public static function createImage($registparts)
@@ -120,6 +106,8 @@ class ImageAcqu
 
   /**
    * 部品検索画像取得
+   * @param array $getimg
+   * @return bool $result
    */
   public static function getImage($getimg)
   {
@@ -152,32 +140,3 @@ class ImageAcqu
     }
   }
 }
-
-// $file = $_FILES['image'];
-  // $filename = $file['name'];
-  // $file_type = $file['type'];
-  // $tmp_path = $file['tmp_name'];
-  // $file_err = $file['error'];
-  // $file_size = $file['size'];
-  // return array ($filename, $file_type, $tmp_path, $file_err, $file_size);
-
-// $percent = 0.5;
-// if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-//   $fp = fopen($_FILES['image']['tmp_name'], "rb");
-//   $img = fread($fp, filesize($_FILES['image']['tmp_name']));
-//   $enc_img = base64_encode($img);
-//   fclose($fp);
-
-// $imginfo = getimagesize($get_parts['img_path']);
-// $percent = 0.5;
-// list($width, $height) = $imginfo;
-// var_dump($imginfo);
-// $newwidth = $width * $percent;
-// $newheight = $height * $percent;
-// var_dump($newwidth);
-// var_dump($newheight);
-// $thumb = imagecreatetruecolor($newwidth, $newheight);
-// $source = imagecreatefromwebp($get_parts['img_path']);
-// imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-
-// $show = '<img src="data:' . $imginfo['mime'] . ';base64,'.$enc_img.'">';

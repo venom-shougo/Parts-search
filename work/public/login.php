@@ -1,13 +1,17 @@
 <?php
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * ログイン処理
+ */
+
 $validate = [];
 $err = [];
 
 // ログインバリデーション
 $err = ValidateForm::setForm($_POST);
 // エラーカウント
-if (count($err) > 0) {
+if (count($err) > NUMBER_OF_ERRORS) {
   $_SESSION['login_err'] = $err;
   header('Location: login_form.php');
   return;

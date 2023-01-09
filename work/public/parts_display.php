@@ -50,7 +50,6 @@ switch ($get_parts['category']) {
 $show = false;
 if (isset($_SESSION['edit_err'])) {
   $edit_err = $_SESSION['edit_err'];
-  // var_dump($edit_err);
   $show = 'show';
   unset($_SESSION['edit_err']);
 }

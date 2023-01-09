@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * ログアウト処理
+ */
+
 // ポスト値が空だったらエラー出力
 if (!$logout = filter_input(INPUT_POST, 'logout')) {
   exit('Invalid post request');

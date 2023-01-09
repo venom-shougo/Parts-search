@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * ログイン入力処理
+ */
+
 // ログイン以降に他formに移らない処理
 $result = UserLogic::checkLogin();
 if ($result) {

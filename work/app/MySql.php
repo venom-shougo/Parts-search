@@ -2,6 +2,10 @@
 
 class Db
 {
+    /**
+     * データベースのテーブル情報取得
+     * @return bool|array $result
+     */
     public static function searchTables()
     {
         $result = false;
@@ -16,6 +20,12 @@ class Db
         }
     }
 
+    /**
+     * テーブルのカラム取得
+     *
+     * @param [type] $column
+     * @return bool|array $result
+     */
     public static function getColumn($column)
     {
         $result = false;

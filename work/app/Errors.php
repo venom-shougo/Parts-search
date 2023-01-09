@@ -1,8 +1,9 @@
 <?php
 
+  // 現在使用していない
+
 class GetError
 {
-  // 現在使用していない
   public static function Errors()
   {
     set_error_handler(function($errno, $errstr, $errfile, $errline) {

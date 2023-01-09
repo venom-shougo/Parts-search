@@ -8,7 +8,8 @@ class OrderLogic
    * @param array $_SESSION['order_parts']
    * @param array $_SESSION['get_parts']
    * @param array $_SESSION['login_user']
-   * @return bool true|false
+   * @see self::orderInquiry
+   * @return bool|array $result
    */
   public static function orderParts()
   {
@@ -57,7 +58,9 @@ class OrderLogic
   }
 
   /**
-   * 注文詳細結果をExcelに送る
+   * パーツ注文処理後に注文詳細結果を返す処理
+   * @param string $part_id, $date
+   * @return bool|array $result
    */
   public static function orderInquiry($part_id, $date)
   {
@@ -88,6 +91,8 @@ class OrderLogic
 
   /**
    * 注文履歴全件取得
+   * @param array $login_user
+   * @return bool|array $result
    */
   public static function totalHistory($login_user)
   {
@@ -111,17 +116,20 @@ class OrderLogic
   }
   /**
    * 注文履歴検索全件取得
+   * @param array $login_user, $search_history
+   * @return bool|array $result
    */
   public static function searchHistry($login_user, $search_history)
   {
     $result = false;
-    $arr = [];
+    $arr1 = [];
+    $arr2 = [];
 
       //カテゴリー選択の値を代入
       $kind = $search_history['search'];
 
     if (!empty($kind)) {
-      //検索方法分岐
+      //検索方法分岐、２つのテーブルから条件検索をかけコピーテーブルに一時保存し内部結合で最終出力
       switch($kind) {
         case '1':
           $sql1 = "DROP TABLE IF EXISTS count_parts";
@@ -182,6 +190,8 @@ class OrderLogic
 
   /**
    * 注文履歴照会
+   * @param array $userORsearch, $now, $perPage
+   * @return bool|array $result
    */
   public static function orderHistory($userORsearch, $now, $perPage)
   {
@@ -201,7 +211,7 @@ class OrderLogic
               FROM order_history
               WHERE user_id = ? ORDER BY id DESC LIMIT ?, ?";
     } elseif (isset($userORsearch['search'])) {
-      //検索方法分岐
+      //検索方法分岐、２つのテーブルから条件検索をかけコピーテーブルに一時保存し内部結合で最終出力
       switch($kind) {
         case '1':
           $sql1 = "DROP TABLE IF EXISTS parts_copy";
@@ -307,6 +317,8 @@ class OrderLogic
 
   /**
    * 注文履歴詳細
+   * @param array $order_id
+   * @return bool|array $result
    */
   public static function detailHistory($order_id)
   {

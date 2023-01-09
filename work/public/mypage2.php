@@ -3,6 +3,10 @@
 require_once(__DIR__ . '/../app/config.php');
 
 // phpinfo();
+/**
+ * マイページ画面
+ * 管理者画面
+ */
 
 //パーツ検索セッションリセット
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -23,12 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     unset($_SESSION['csrf_token']);
     unset($_SESSION['count']);
 }
-// unset($_SESSION['send_parts']);
-// unset($_SESSION['err']);
-// unset($_SESSION['bool']);
-
-
-
 
 // ログイン中合否判定、丕は新規画面へ
 $result = UserLogic::checkLogin();

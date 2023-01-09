@@ -1,5 +1,7 @@
 <?php
 
+// 現在使用していない
+
 class Multibyte
 {
   public static function mbChar($str)

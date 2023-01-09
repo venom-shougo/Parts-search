@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * パーツ検索処理
+ */
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     //リンクの値を取得
     $_SESSION['category'] = $_GET['data'];
@@ -13,8 +17,6 @@ if (isset($_SESSION['validation_err'])) {
     $validation_srr = $_SESSION['validation_err'];
     unset($_SESSION['validation_err']);
 }
-
-
 
 include('_header.php');
 ?>

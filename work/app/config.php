@@ -24,6 +24,9 @@ if ($login_user['name'] === 'admin') {
     $admin = true;
 }
 
+const TOTAL_RECORDS_PER_PAGE = '5';
+const NUMBER_OF_ERRORS = 0;
+
 require_once(__DIR__ . '/Database.php');
 require_once(__DIR__ . '/MySql.php');
 require_once(__DIR__ . '/Validation.php');

@@ -2,7 +2,9 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
-$login_user = $_SESSION['login_user'];
+/**
+ * 購入履歴からさらに詳細検索する処理
+ */
 
 //ページネーション用URL取得
 if (!empty($_SERVER['SCRIPT_NAME'])) {
@@ -12,7 +14,7 @@ if (!empty($_SERVER['SCRIPT_NAME'])) {
 //パーツ検索入力の検査
 $err = PartsValidateForm::searchParts();
 
-if (count($err) > 0) {
+if (count($err) > NUMBER_OF_ERRORS) {
   $_SESSION['validation_err'] = $err;
   header('Location: get_history.php');
   return;
@@ -39,8 +41,6 @@ if (!isset($_GET['page'])) {
 
 //ユーザの注文履歴テーブルから履歴取得
 $order = OrderLogic::orderHistory($search_history, $now, $per_page);
-// var_dump($order);
-// exit;
 //idは次のPOST処理のvalue値にする
 //日付とパーツ名を value に変換 id を key にする処理
 if (!empty($order)) {

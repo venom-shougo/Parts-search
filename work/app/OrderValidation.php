@@ -3,7 +3,7 @@ class OrderValidation
 {
   /**
    * 注文バリデーション
-   * @param input $_SESSION['order_parts']
+   * @param array $_SESSION['order_parts']
    * @param array $order_parts
    * @return array $err
    */
