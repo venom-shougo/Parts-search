@@ -1,20 +1,12 @@
 // 'use strict';
-// {
-//   document.querySelector('a').addEventListener('click', () => {
-//     const input = document.querySelector('input');
-//     input.textContent = text.value;
-//     console.log('input');
-//     document.getElementById('Form1').addEventListener('submit', () => {
-//     //     e.preventDefault(); //ページ遷移をキャンセル 普通は使わない
-//         console.log('submit');
-//     });
-//   });
-  // console.log(a);
-// document.getElementById("parts").addEventListener("click", function() {
-//   partsform.submit();
-
-// function FormSubmit() {
-//   var target = document.getElementById("form1");
-//   target.method = "post";
-//   target.submit();
-// }
+// var xhr = new XMLHttpRequest();
+// xhr.open('POST', 'register_plant_form.php');
+// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// xhr.onload = function () {
+//   if (xhr.status === 200 && xhr.responseText !== "") {
+//     console.log('Success: ' + xhr.responseText);
+//   } else if (xhr.status !== 200) {
+//     console.log('Error: ' + xhr.status);
+//   }
+// };
+// xhr.send('selected-value=' + encodeURIComponent(document.getElementById('floatingCelect').value));

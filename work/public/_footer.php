@@ -9,5 +9,6 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/bootstrap.bundle.man.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

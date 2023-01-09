@@ -52,7 +52,7 @@ if (isset($_SESSION['validation_err'])) {
 
 //パーツ検索Formをセッションに保存
 //
-//PGET処理分岐
+//GET処理分岐
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // get値分岐
     $branch = $_GET['data'];
@@ -79,7 +79,7 @@ include('_header.php');
     <main class="m-auto">
         <div class="d-flex justify-content-center">
             <a href="http://localhost:8562/mypage2.php?data=gear"><img class="img-size img-fluid mt-4 mb-0" src="./img/mypage/plant.png" alt="設備から検索"><br>
-                <p class="text-center">設備から検索</p>
+                <p class="text-center">機器から検索</p>
             </a>
             <a href="http://localhost:8562/mypage2.php?data=search"><img class="img-size img-fluid mt-4 mb-0" src="./img/mypage/glass.png" alt="部品名から検索"><br>
                 <p class="text-center">部品一覧から検索</p>
