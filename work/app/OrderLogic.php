@@ -47,7 +47,9 @@ class OrderLogic
       //登録処理後の時間
       $date = date('Y-m-d H:i:s');
       // 購入した部品を取得してリターン
-      if (!empty($result)) $result = self::orderInquiry($get_parts, $date);
+      if (!empty($result)) {
+        $result = self::orderInquiry($get_parts, $date);
+      }
       if (isset($result)) {
         return $result;
       }
