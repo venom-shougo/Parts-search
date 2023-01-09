@@ -4,7 +4,7 @@ class PartsValidateForm
 {
   /**
    * パーツ登録バリデーション
-   * @param array $setparts
+   * @param array $register
    * @return array $err
    */
   public static function setParts($register)
@@ -130,7 +130,7 @@ class PartsValidateForm
 
   /**
    * 部品検索バリデーション
-   * @param array $parts
+   * @param array $_SESSION['category']
    * @return array $err
    */
   public static function searchParts()
@@ -163,7 +163,7 @@ class PartsValidateForm
 
   /**
    * パーツ編集バリデーション
-   * @param array $setparts
+   * @param array $register
    * @return array $err
    */
   public static function editParts($register)

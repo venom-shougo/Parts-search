@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * パーツ検索から画像リスト表示処理
+ */
+
 //ページネーション用URL取得
 if (!empty($_SERVER['SCRIPT_NAME'])) {
   $url = $_SERVER['SCRIPT_NAME'];
@@ -9,11 +13,10 @@ if (!empty($_SERVER['SCRIPT_NAME'])) {
 
 // $referer = $_SERVER['HTTP_REFERER'];
 
-
 //パーツ検索入力の検査
 $err = [];
 $err = PartsValidateForm::searchParts();
-if (count($err) > 0) {
+if (count($err) > NUMBER_OF_ERRORS) {
   $_SESSION['validation_err'] = $err;
   header('Location: search.php');
   exit();
@@ -25,7 +28,7 @@ if (count($err) > 0) {
 
 //ページネーション
 $count = array_column($parts_count, 'count'); //トータルデータ数
-$per_page = 5; //1ページあたりのデータ件数
+$per_page = TOTAL_RECORDS_PER_PAGE; //1ページあたりのデータ件数
 $max_page = ceil($count[0] / $per_page); //最大ページ数
 
 //で渡されたページ確認

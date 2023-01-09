@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * 新規登録処理
+ */
+
 // トークン照会
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   Token::validateToken();
@@ -20,7 +24,7 @@ $err = ValidateForm::setSignup($signup);
 // var_dump($err);
 // exit;
 // エラー無しで同ユーザチェック
-if (count($err) > 0) {
+if (count($err) > NUMBER_OF_ERRORS) {
   $_SESSION['signup_err'] = $err;
   header('Location: signup_form.php');
   return;

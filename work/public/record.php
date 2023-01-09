@@ -2,6 +2,9 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * パーツ登録処理
+ */
 
 // トークン照会
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

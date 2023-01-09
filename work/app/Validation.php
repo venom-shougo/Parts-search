@@ -22,7 +22,7 @@ class ValidateForm
         $err['name_err'] = '全角16文字以内で入力してください';
       }
     }
-    
+
     if (empty($userData['department'])) {
       $err['department_err'] = '部署を選択してください';
     } else {
@@ -43,7 +43,7 @@ class ValidateForm
       }
     }
 
-    
+
     $password = Utils::checkInput(trim($userData['pass']));
     if (!preg_match("/\A[a-z\d]{4,8}+\z/i", $password)) {
       $err['pass_err'] = '4文字以上8文字以内の半角小文字英字を入力してください';
@@ -56,13 +56,10 @@ class ValidateForm
   /**
    * ログインバリデーション
    * @param array $userData
-   * @param array $arr
    * @return array $err
    */
   public static function setForm($userData)
   {
-    // var_dump($userData);
-    // exit;
     $err = [];
 
     if (empty(trim($userData['employee']))) {
@@ -74,7 +71,7 @@ class ValidateForm
         $err['empl_err'] = '10文字以内で入力してください';
       }
     }
-    
+
     if (empty(trim($userData['mypass']))) {
       $err['mypass_err'] = 'パスワードを入力してください';
     } else {
@@ -82,8 +79,11 @@ class ValidateForm
     }
     return $err;
   }
+
   /**
    * 管理者パスワードバリデーション
+   * @param array $_SESSION['delete_parts']
+   * @return array $err
    */
   public static function adminPass()
   {

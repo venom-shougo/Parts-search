@@ -38,6 +38,8 @@ class PartsLogic
   }
   /**
    * パーツ検索件数取得
+   * @param array $_SESSION['category']
+   * @return bool|array $result
    */
   public static function totalParts()
   {
@@ -85,7 +87,7 @@ class PartsLogic
   /**
    * パーツ検索取得
    * @param string $now, $per_page
-   * @return array|bool $result
+   * @return bool|array $result
    */
   public static function searchParts($now, $per_page)
   {
@@ -233,6 +235,8 @@ class PartsLogic
 
   /**
    * パーツ削除処理
+   * @param array $_SESSION['delete_parts']
+   * @see UserLogic::getAdminByPass
    * @return bool $result
    */
   public static function deleteParts()
@@ -246,8 +250,6 @@ class PartsLogic
     }
     //管理者パスワード代入
     $admin_pass[] = $delete['admin_pass'];
-    // var_dump($admin_pass);
-    // exit;
 
     $sql = "DELETE FROM parts WHERE id = ?";
 

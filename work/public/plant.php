@@ -1,5 +1,7 @@
 <?php
 
+//工場設備からパーツ検索処理
+
 require_once(__DIR__ . '/../app/config.php');
 
 

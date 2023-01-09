@@ -1,12 +1,15 @@
 <?php
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * 購入履歴パーツ詳細表示処理
+ * 購入手続きForm処理
+ */
+
 Token::setToken();
 
 if (!empty($_SESSION['history_parts'])) {
   $history_parts = $_SESSION['history_parts']; //注文数詳細を代入
-  // var_dump($history_parts);
-  // exit;
   $get_history = OrderLogic::detailHistory($history_parts); //内部結合で購入履歴と部品を取得
   $_SESSION['get_parts'] = $get_history; //orderParts処理の値を保存
   $result_img = ImageAcqu::getImage($get_history); //部品詳細から画像を取得

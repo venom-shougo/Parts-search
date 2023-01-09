@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * パーツ登録確認処理
+ */
+
 Token::setToken();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -40,7 +44,7 @@ if (isset($_SESSION['checked_err'])) {
 }
 
 // エラーカウント
-if (count($err) > 0) {
+if (count($err) > NUMBER_OF_ERRORS) {
   $_SESSION['err'] = $err;
   header('Location: register_form.php');
   return;

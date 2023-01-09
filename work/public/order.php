@@ -1,7 +1,11 @@
 <?php
 
 require_once(__DIR__ . '/../app/config.php');
-// var_dump($_SESSION);
+
+/**
+ * パーツ注文処理
+ */
+
 // トークン照会
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   Token::validateToken();

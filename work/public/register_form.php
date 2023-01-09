@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * パーツ登録Form処理
+ */
+
 $err = [];
 
 // $values = $_SESSION['register'];

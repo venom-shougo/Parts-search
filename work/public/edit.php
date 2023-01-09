@@ -2,6 +2,10 @@
 
 require_once(__DIR__ . '/../app/config.php');
 
+/**
+ * 管理者がパーツ詳細を再編集する処理
+ */
+
 Token::setToken();
 
 //パーツフォーム編集入力後POST処理
@@ -49,10 +53,7 @@ if (count($err) > 0) {
 }
 
 //差分をCSSで表示
-// var_dump($edit_parts);
-// var_dump($get_parts);
 $result = array_diff( $get_parts, $edit_parts);
-// var_dump($result);
 
 //三項演算子でスタイルを適用
 isset($result['partname']) ? $text_color1 = 'text-success h5' : false;
