@@ -59,22 +59,21 @@ CREATE TABLE order_history (
 );
 
 
--- CREATE TABLE images (
---   id INT AUTO_INCREMENT,
---   img LONGBLOB,
---   img_mime varchar(32),
---   img_name varchar(128),
---   PRIMARY KEY (id)
--- );
--- CREATE TABLE purchase_history (
---   id INT NOT NULL AUTO_INCREMENT,
---   user_id INT NOT NULL,
---   price DECIMAL(10) NOT NULL,
---   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
---   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
---   PRIMARY KEY (id),
---   FOREIGN KEY (user_id) REFERENCES users(id)
--- );
+CREATE TABLE machines (
+  id INT NOT NULL AUTO_INCREMENT,
+  part_id INT NOT NULL,
+  img_name varchar(32) NOT NULL,
+  img_path varchar(255) NOT NULL,
+  machine_name varchar(32) NOT NULL,
+  machine_number varchar(16) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (part_id) REFERENCES parts(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
 
 -- MySQLログイン
 docker compose exec db bash -c 'mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE'
