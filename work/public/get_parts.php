@@ -13,7 +13,7 @@ if (!empty($_SERVER['SCRIPT_NAME'])) {
 
 // $referer = $_SERVER['HTTP_REFERER'];
 
-//パーツ検索入力の検査
+// パーツ検索入力の検査
 $err = [];
 $err = PartsValidateForm::searchParts();
 if (count($err) > NUMBER_OF_ERRORS) {

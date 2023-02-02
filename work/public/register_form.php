@@ -7,8 +7,8 @@ require_once(__DIR__ . '/../app/config.php');
  */
 
 $err = [];
+$err2 = [];
 
-// $values = $_SESSION['register'];
 
 //未入力エラー
 if (!empty($_SESSION['err'])) {
